@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/png"
+    href="data:image/png;base64,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">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomeLane — Surprise Us</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0D0C09;
+      --surface: #141310;
+      --text: #F2EDE3;
+      --muted: #6B6760;
+      --faint: #252320;
+      --accent: #D4912A;
+      --accent-hover: #E8A53A;
+      --border: #232118;
+      --danger: #E24B4A;
+    }
+
+    html,
+    body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.6;
+    }
+
+    #prog-track {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background: var(--border);
+      z-index: 200;
+    }
+
+    #prog-fill {
+      height: 100%;
+      background: var(--accent);
+      width: 0%;
+      transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 28px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+    }
+
+    .logo img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+    }
+
+    .logo span {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #E8312A;
+    }
+
+    #step-ctr {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      font-variant-numeric: tabular-nums;
+    }
+
+    #step-ctr strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    #slides {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 48px;
+      opacity: 0;
+      transform: translateY(32px);
+      pointer-events: none;
+      transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform, opacity;
+    }
+
+    .slide.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+
+    .slide.out {
+      opacity: 0;
+      transform: translateY(-32px);
+      pointer-events: none;
+    }
+
+    .inner {
+      max-width: 660px;
+      width: 100%;
+    }
+
+    .q-num {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .q-num::after {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.4;
+    }
+
+    .q-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 3.8vw, 42px);
+      line-height: 1.22;
+      color: var(--text);
+      margin-bottom: 14px;
+      font-weight: 400;
+    }
+
+    .q-text em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .q-hint {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 36px;
+      max-width: 540px;
+    }
+
+    .field {
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 28px;
+      transition: border-color 0.2s;
+      position: relative;
+    }
+
+    .field::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .field:focus-within::after {
+      width: 100%;
+    }
+
+    input[type=text],
+    input[type=url],
+    textarea {
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 19px;
+      font-weight: 300;
+      padding: 14px 0;
+      resize: none;
+      caret-color: var(--accent);
+      line-height: 1.6;
+    }
+
+    textarea {
+      min-height: 96px;
+    }
+
+    ::placeholder {
+      color: var(--muted);
+      opacity: 0.55;
+    }
+
+    .role-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    @media(max-width:560px) {
+      .role-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .role-opt {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 13px 16px;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      user-select: none;
+    }
+
+    .role-opt:hover {
+      border-color: rgba(212, 145, 42, 0.4);
+      background: rgba(212, 145, 42, 0.04);
+    }
+
+    .role-opt.selected {
+      border-color: var(--accent);
+      background: rgba(212, 145, 42, 0.08);
+    }
+
+    .opt-key {
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.15s;
+    }
+
+    .role-opt.selected .opt-key {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--bg);
+    }
+
+    .opt-label {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+
+    .cta-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      cursor: pointer;
+      padding: 13px 26px;
+      border-radius: 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn .arr {
+      font-size: 13px;
+    }
+
+    .enter-tip {
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    kbd {
+      background: var(--faint);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 2px 6px;
+      font-size: 10px;
+      font-family: monospace;
+      color: var(--muted);
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.5;
+    }
+
+    .welcome-h {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 5.5vw, 68px);
+      line-height: 1.06;
+      margin-bottom: 24px;
+      font-weight: 400;
+    }
+
+    .welcome-h em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .welcome-body {
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--muted);
+      max-width: 500px;
+      margin-bottom: 44px;
+    }
+
+    .welcome-meta {
+      margin-top: 18px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .meta-pill {
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-pill::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.6;
+    }
+
+    .success-ring {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 32px;
+      color: var(--accent);
+      font-size: 18px;
+    }
+
+    .success-h {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .success-p {
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--muted);
+      max-width: 480px;
+    }
+
+    #nav {
+      position: fixed;
+      bottom: 32px;
+      right: 44px;
+      display: flex;
+      gap: 6px;
+      z-index: 100;
+    }
+
+    .nav-btn {
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 14px;
+      transition: all 0.15s;
+    }
+
+    .nav-btn:hover:not(:disabled) {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.2;
+      cursor: default;
+    }
+
+    /* Error toast */
+    #toast {
+      position: fixed;
+      bottom: 88px;
+      left: 50%;
+      transform: translateX(-50%) translateY(12px);
+      background: #1a0f0f;
+      border: 1px solid var(--danger);
+      color: #f09595;
+      font-size: 13px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+      pointer-events: none;
+      white-space: nowrap;
+      z-index: 300;
+    }
+
+    #toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Spinner */
+    .spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(13, 12, 9, 0.3);
+      border-top-color: var(--bg);
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      display: none;
+    }
+
+    .btn.loading .spinner {
+      display: block;
+    }
+
+    .btn.loading .btn-label {
+      display: none;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── REPLACE THIS with your Replit backend URL ── -->
+  <script>
+    const API_URL = "https://4d8eacb9-3213-4d47-b403-c3d7b69f1197-00-rkbdavjqlgzi.janeway.replit.dev/api/apply";
+  </script>
+
+  <div id="prog-track">
+    <div id="prog-fill"></div>
+  </div>
+  <div id="toast"></div>
+
+  <header>
+    <a class="logo" href="#"><img
+        src="data:image/png;base64,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"
+        alt="HomeLane logo" /><span>HomeLane</span></a>
+    <div id="step-ctr"></div>
+  </header>
+
+  <div id="slides">
+
+    <!-- 0: Welcome -->
+    <div class="slide active" data-idx="0">
+      <div class="inner">
+        <div class="eyebrow">We're hiring</div>
+        <h1 class="welcome-h">Surprise us.<br><em>We dare you.</em></h1>
+        <p class="welcome-body">
+          We're not looking for the right answers.<br>
+          We're looking for the right minds — people who think in agents, ship with AI as a co-pilot, and move
+          differently because of it.
+        </p>
+        <div class="cta-row">
+          <button class="btn" onclick="goNext()"><span class="btn-label">Let's go →</span>
+            <div class="spinner"></div>
+          </button>
+        </div>
+        <div class="welcome-meta">
+          <div class="meta-pill">5 questions</div>
+          <div class="meta-pill">~4 minutes</div>
+          <div class="meta-pill">No right answers</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1: Role -->
+    <div class="slide" data-idx="1">
+      <div class="inner">
+        <div class="q-num">01</div>
+        <h2 class="q-text">Which role are you here for?</h2>
+        <p class="q-hint">Pick the one that fits. If you're not sure, pick the one that excites you most.</p>
+        <div class="role-grid" id="role-grid">
+          <div class="role-opt" data-val="Product Manager" onclick="pickRole(this)">
+            <div class="opt-key">A</div>
+            <div class="opt-label">Product Manager</div>
+          </div>
+          <div class="role-opt" data-val="Product Designer" onclick="pickRole(this)">
+            <div class="opt-key">B</div>
+            <div class="opt-label">Product Designer</div>
+          </div>
+          <div class="role-opt" data-val="Backend / AI Engineer" onclick="pickRole(this)">
+            <div class="opt-key">C</div>
+            <div class="opt-label">Backend / AI Engineer</div>
+          </div>
+          <div class="role-opt" data-val="Program Manager" onclick="pickRole(this)">
+            <div class="opt-key">D</div>
+            <div class="opt-label">Program Manager</div>
+          </div>
+          <div class="role-opt" data-val="Strategy Office Role" onclick="pickRole(this)"
+            style="grid-column:1/-1;max-width:320px;">
+            <div class="opt-key">E</div>
+            <div class="opt-label">Strategy Office Role</div>
+          </div>
+        </div>
+        <div class="cta-row">
+          <button class="btn" onclick="goNext()"><span class="btn-label">OK →</span>
+            <div class="spinner"></div>
+          </button>
+          <span class="enter-tip">press <kbd>Enter ↵</kbd></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2: AI Build -->
+    <div class="slide" data-idx="2">
+      <div class="inner">
+        <div class="q-num">02</div>
+        <h2 class="q-text">Show us your best AI build.</h2>
+        <p class="q-hint">A GitHub repo, a deployed app, a Loom, a deck — anything that shows what you've actually made.
+          One link is plenty. <span style="color:var(--accent);font-size:12px;">Required</span></p>
+        <div class="field">
+          <input type="url" id="ai-link" placeholder="https://" autocomplete="off" spellcheck="false" />
+        </div>
+        <div class="cta-row">
+          <button class="btn" onclick="goNext()"><span class="btn-label">OK →</span>
+            <div class="spinner"></div>
+          </button>
+          <span class="enter-tip">press <kbd>Enter ↵</kbd></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3: AI changed work -->
+    <div class="slide" data-idx="3">
+      <div class="inner">
+        <div class="q-num">03</div>
+        <h2 class="q-text">How has AI <em>fundamentally</em> changed the way you work?</h2>
+        <p class="q-hint">Not which tools you use. How your thinking, process, or output is different because of it.</p>
+        <div class="field">
+          <textarea id="ai-change" placeholder="Tell us honestly..." rows="4"></textarea>
+        </div>
+        <div class="cta-row">
+          <button class="btn" onclick="goNext()"><span class="btn-label">OK →</span>
+            <div class="spinner"></div>
+          </button>
+          <span class="enter-tip"><kbd>Shift</kbd> + <kbd>Enter ↵</kbd> for new line</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4: Bottleneck -->
+    <div class="slide" data-idx="4">
+      <div class="inner">
+        <div class="q-num">04</div>
+        <h2 class="q-text">What's the biggest problem AI <em>still</em> can't solve for you?</h2>
+        <p class="q-hint">The gap that still frustrates you. The thing that makes you want to build.</p>
+        <div class="field">
+          <textarea id="ai-bottleneck" placeholder="What keeps you up at night..." rows="4"></textarea>
+        </div>
+        <div class="cta-row">
+          <button class="btn" onclick="goNext()"><span class="btn-label">OK →</span>
+            <div class="spinner"></div>
+          </button>
+          <span class="enter-tip"><kbd>Shift</kbd> + <kbd>Enter ↵</kbd> for new line</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5: Fix at HomeLane -->
+    <div class="slide" data-idx="5">
+      <div class="inner">
+        <div class="q-num">05</div>
+        <h2 class="q-text">If you joined HomeLane tomorrow — what's the first thing you'd fix?</h2>
+        <p class="q-hint">Don't play it safe. We don't want compliments. We want to know how you see problems.</p>
+        <div class="field">
+          <textarea id="hl-fix" placeholder="Don't hold back..." rows="4"></textarea>
+        </div>
+        <div class="cta-row">
+          <button class="btn" onclick="goNext()"><span class="btn-label">OK →</span>
+            <div class="spinner"></div>
+          </button>
+          <span class="enter-tip">press <kbd>Enter ↵</kbd></span>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 6: Full Name -->
+    <div class="slide" data-idx="6">
+      <div class="inner">
+        <div class="q-num">06</div>
+        <h2 class="q-text">What's your name?</h2>
+        <p class="q-hint">First and last name. <span style="color:var(--accent);font-size:12px;">Required</span></p>
+        <div class="field">
+          <input type="text" id="full-name" placeholder="Your full name" autocomplete="off" />
+        </div>
+        <div class="cta-row">
+          <button class="btn" onclick="goNext()"><span class="btn-label">OK →</span>
+            <div class="spinner"></div>
+          </button>
+          <span class="enter-tip">press <kbd>Enter ↵</kbd></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7: Email -->
+    <div class="slide" data-idx="7">
+      <div class="inner">
+        <div class="q-num">07</div>
+        <h2 class="q-text">Your email address.</h2>
+        <p class="q-hint">We'll only use this to reach out if your application surprises us. <span
+            style="color:var(--accent);font-size:12px;">Required</span></p>
+        <div class="field">
+          <input type="text" id="email" placeholder="you@example.com" autocomplete="off" spellcheck="false" />
+        </div>
+        <div class="cta-row">
+          <button class="btn" onclick="goNext()"><span class="btn-label">OK →</span>
+            <div class="spinner"></div>
+          </button>
+          <span class="enter-tip">press <kbd>Enter ↵</kbd></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8: Phone -->
+    <div class="slide" data-idx="8">
+      <div class="inner">
+        <div class="q-num">08</div>
+        <h2 class="q-text">Phone number.</h2>
+        <p class="q-hint">We move fast when we find the right person. <span
+            style="color:var(--accent);font-size:12px;">Required</span></p>
+        <div class="field">
+          <input type="text" id="phone" placeholder="+91 XXXXX XXXXX" autocomplete="off" />
+        </div>
+        <div class="cta-row">
+          <button class="btn" onclick="goNext()"><span class="btn-label">OK →</span>
+            <div class="spinner"></div>
+          </button>
+          <span class="enter-tip">press <kbd>Enter ↵</kbd></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9: Resume / Portfolio -->
+    <div class="slide" data-idx="9">
+      <div class="inner">
+        <div class="q-num">09</div>
+        <h2 class="q-text">Drop a link to your resume <em>or</em> portfolio.</h2>
+        <p class="q-hint">Google Drive, Notion, personal site — whatever represents you best. <span
+            style="color:var(--accent);font-size:12px;">Required</span></p>
+        <div class="field">
+          <input type="url" id="resume-link" placeholder="https://" autocomplete="off" spellcheck="false" />
+        </div>
+        <div class="cta-row">
+          <button class="btn" id="submit-btn" onclick="submitForm()">
+            <span class="btn-label">Submit →</span>
+            <div class="spinner"></div>
+          </button>
+          <span class="enter-tip">press <kbd>Enter ↵</kbd></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10: Success -->
+    <div class="slide" data-idx="10">
+      <div class="inner">
+        <div class="success-ring">✓</div>
+        <h2 class="success-h">Thank you, <em id="thank-name">friend</em>.<br>We'll let you know if we're surprised!</h2>
+        <p class="success-p">
+          We've received your application and we'll review it personally — no bots, no automated rejections.<br><br>
+          If your thinking resonates, you'll hear from us directly. Give us a few days.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="nav">
+    <button class="nav-btn" id="btn-up" onclick="goPrev()" disabled title="Previous">↑</button>
+    <button class="nav-btn" id="btn-dn" onclick="goNext()" title="Next">↓</button>
+  </div>
+
+  <script>
+    const TOTAL = 9;
+    let cur = 0;
+    const formData = {};
+    const slides = document.querySelectorAll('.slide');
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3500);
+    }
+
+    function goTo(n) {
+      const prev = slides[cur];
+      prev.classList.add('out');
+      prev.classList.remove('active');
+      setTimeout(() => prev.classList.remove('out'), 480);
+      cur = n;
+      slides[cur].classList.add('active');
+      setTimeout(() => {
+        const inp = slides[cur].querySelector('input,textarea');
+        if (inp) inp.focus();
+      }, 320);
+      const pct = cur === 0 ? 0 : cur >= TOTAL ? 100 : (cur / (TOTAL + 1)) * 100;
+      document.getElementById('prog-fill').style.width = pct + '%';
+      const ctr = document.getElementById('step-ctr');
+      ctr.innerHTML = (cur > 0 && cur <= TOTAL) ? `<strong>${cur}</strong> / ${TOTAL}` : '';
+      document.getElementById('btn-up').disabled = cur === 0;
+      document.getElementById('btn-dn').disabled = cur >= TOTAL + 1;
+    }
+
+    function goNext() {
+      // Mandatory field validation per slide
+      if (cur === 1 && !formData.role) {
+        showToast('Please pick a role to continue');
+        return;
+      }
+      if (cur === 2) {
+        const v = document.getElementById('ai-link').value.trim();
+        if (!v) { showToast('Please add a link to your AI build'); return; }
+      }
+      if (cur === 6) {
+        const v = document.getElementById('full-name').value.trim();
+        if (!v) { showToast('Please enter your full name'); return; }
+      }
+      if (cur === 7) {
+        const v = document.getElementById('email').value.trim();
+        if (!v) { showToast('Please enter your email address'); return; }
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) { showToast('Please enter a valid email address'); return; }
+      }
+      if (cur === 8) {
+        const v = document.getElementById('phone').value.trim();
+        if (!v) { showToast('Please enter your phone number'); return; }
+        const digits = v.replace(/[\s\-\+\(\)]/g, '');
+        if (!/^\d{10,15}$/.test(digits)) { showToast('Please enter a valid phone number'); return; }
+      }
+      if (cur <= TOTAL) goTo(cur + 1);
+    }
+    function goPrev() { if (cur > 0) goTo(cur - 1); }
+
+    function pickRole(el) {
+      document.querySelectorAll('.role-opt').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      formData.role = el.dataset.val;
+    }
+
+    async function submitForm() {
+      const resumeVal = document.getElementById('resume-link').value.trim();
+      if (!resumeVal) { showToast('Please add your resume or portfolio link'); return; }
+
+      const payload = {
+        role: formData.role || 'Not specified',
+        ai_link: document.getElementById('ai-link').value.trim() || 'Not provided',
+        ai_change: document.getElementById('ai-change').value.trim() || 'Not provided',
+        ai_bottleneck: document.getElementById('ai-bottleneck').value.trim() || 'Not provided',
+        hl_fix: document.getElementById('hl-fix').value.trim() || 'Not provided',
+        full_name: document.getElementById('full-name').value.trim() || 'Not provided',
+        email: document.getElementById('email').value.trim() || 'Not provided',
+        phone: document.getElementById('phone').value.trim() || 'Not provided',
+        resume_link: document.getElementById('resume-link').value.trim() || 'Not provided',
+      };
+
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.classList.add('loading');
+
+      try {
+        const res = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          throw new Error(err.detail || `Server error ${res.status}`);
+        }
+        document.getElementById('btn-dn').disabled = true;
+        document.getElementById('prog-fill').style.width = '100%';
+        const firstName = document.getElementById('full-name').value.trim().split(' ')[0];
+        if (firstName) document.getElementById('thank-name').textContent = firstName;
+        goTo(10);
+      } catch (e) {
+        showToast('Something went wrong — please try again');
+        console.error(e);
+        btn.disabled = false;
+        btn.classList.remove('loading');
+      }
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        const ta = document.querySelector('.slide.active textarea');
+        if (ta && document.activeElement === ta) return;
+        if (cur === TOTAL) { submitForm(); return; }
+        goNext();
+      }
+      if (cur === 1) {
+        const map = { a: 0, b: 1, c: 2, d: 3, e: 4 };
+        const k = e.key.toLowerCase();
+        if (map[k] !== undefined) {
+          const opts = document.querySelectorAll('.role-opt');
+          if (opts[map[k]]) pickRole(opts[map[k]]);
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
